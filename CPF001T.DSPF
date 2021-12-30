@@ -1,0 +1,95 @@
+     A*%%TS  SD  20211227  195437  MSXBRASIL   REL-V7R4M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A          R CPF001S                   SFL
+     A*%%TS  SD  20211222  222617  MSXBRASIL   REL-V7R4M0  5770-WDS
+     A            SFNUMR        14A  O  8  4DSPATR(HI)
+     A            SFNOME        26A  O  8 19DSPATR(HI)
+     A            SFSEXO         1A  O  8 46DSPATR(HI)
+     A            SFDATAN        8Y 0O  8 48EDTCDE(Y)
+     A                                      DSPATR(HI)
+     A            SFCIDA        19A  O  8 59DSPATR(HI)
+     A            SFSEL          1A  B  8  2DSPATR(HI)
+     A                                      VALUES('2' '4' '5' '6')
+     A            SFPROVI        2   O  8 79DSPATR(HI)
+     A          R CPF001C                   SFLCTL(CPF001S)
+     A*%%TS  SD  20211222  222617  MSXBRASIL   REL-V7R4M0  5770-WDS
+     A                                      SFLSIZ(0500)
+     A                                      SFLPAG(0014)
+     A                                      OVERLAY
+     A                                      CF03(03 'Exit')
+     A                                      CF06(06 'AddNewID')
+     A                                      CF07(07 'XML')
+     A  40                                  SFLDSP
+     A  41                                  SFLDSPCTL
+     A  44                                  SFLCLR
+     A  90                                  SFLEND
+     A                                  1  2'CPF001T'
+     A                                  1 11'MAINTENANCE'
+     A                                      DSPATR(RI)
+     A                                      DSPATR(HI)
+     A                                  1 34'ID REGISTRATION'
+     A                                  1 73DATE
+     A                                      EDTCDE(Y)
+     A                                  2 73TIME
+     A                                  3  2'Searching:'
+     A            CTNUMR        14A  B  3 13DSPATR(HI)
+     A                                  5  2'Type options, press enter.'
+     A                                      COLOR(BLU)
+     A                                  6  2'2=Change 4=Delete  5=Work with 6=P-
+     A                                      rint'
+     A                                      COLOR(BLU)
+     A                                  7  4'ID_Num'
+     A                                  7 19'Name'
+     A                                  7 46'G'
+     A                                  7 48'BirthDate'
+     A                                  7 59'City'
+     A                                  7  2'O'
+     A                                  7 79'Pr'
+     A          R CPF001R
+     A*%%TS  SD  20211222  221347  MSXBRASIL   REL-V7R4M0  5770-WDS
+     A                                      OVERLAY
+     A                                 23  3'F3=Exit F6=Add NewID F7=Create Wit-
+     A                                      h XML Mode'
+     A                                      COLOR(BLU)
+     A          R CPF001W
+     A*%%TS  SD  20211227  195437  MSXBRASIL   REL-V7R4M0  5770-WDS
+     A                                      WINDOW(3 11 10 40)
+     A                                      CF12(12 'PREVIOUS')
+     A                                      WDWTITLE((*TEXT &TIT1))
+     A                                      WDWTITLE((*TEXT 'F12=PREVIO <<ENTER-
+     A                                      >>') *BOTTOM)
+     A            TIT1          24A  P
+     A                                  2  1'IDNum:'
+     A                                      DSPATR(ND)
+     A            SFNUMR        14   O  2  8DSPATR(ND)
+     A                                  3  1'Name:'
+     A            SFNOME        26A  B  3  7DSPATR(HI)
+     A  31                                  DSPATR(PR)
+     A N30                                  DSPATR(UL)
+     A  31                                  COLOR(BLU)
+     A                                  4  1'Gender:'
+     A            SFSEXO         1A  B  4  9DSPATR(HI)
+     A  30                                  DSPATR(PR)
+     A N30                                  DSPATR(UL)
+     A  31 30                               COLOR(BLU)
+     A                                  5  1'Birth Date:'
+     A            SFDATAN        8Y 0B  5 13DSPATR(HI)
+     A  30                                  DSPATR(PR)
+     A N30                                  DSPATR(UL)
+     A  30                                  COLOR(BLU)
+     A                                      EDTWRD('  /  /    ')
+     A                                      EDTMSK('  &  &    ')
+     A                                  6  1'City:'
+     A            SFCIDA        19A  B  6  7DSPATR(HI)
+     A  31                                  DSPATR(PR)
+     A N30                                  DSPATR(UL)
+     A  31                                  COLOR(BLU)
+     A            WDMSG         35A  O  9  1COLOR(RED)
+     A                                  7  1'Province:'
+     A            SFPROVI        2A  B  7 11DSPATR(HI)
+     A  30                                  DSPATR(PR)
+     A N30                                  DSPATR(UL)
+     A  31 30                               COLOR(BLU)
+     A          R ASSUME
+     A*%%TS  SD  20191029  191920  MSXBRASIL   REL-V7R3M0  5770-WDS

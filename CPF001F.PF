@@ -1,0 +1,8 @@
+     A
+     A          R CPF001R
+     A            CPNUMR        14A         TEXT('NR CPF')
+     A            CPNOME        30A         TEXT('NOME')
+     A            CPSEXO         1A         TEXT('SEXO')
+     A            CPDTNA         8  0       TEXT('DATA NASCIMENTO')
+     A            CPCIDA        30A         TEXT('CIDADE')
+     A            CPPROV         2A         TEXT('PROVINCIA')
